@@ -1,0 +1,25 @@
+- inference_config: "configs/inference/inference-v2.yaml"
+  motion_module:    "models/Motion_Module/mm_sd_v15_v2.ckpt"
+
+  dreambooth_path: "models/DreamBooth_LoRA/realisticVisionV51_v51VAE.safetensors"
+  lora_model_path: ""
+
+  motion_module_lora_configs:
+    - path:  "models/MotionLoRA/v2_lora_PanLeft.ckpt"
+      alpha: 1.0
+
+  controlnet_config: "configs/inference/sparsectrl/condition.yaml"
+  controlnet_path:   "models/model.ckpt"
+
+  controlnet_image_indexs: [0]
+  controlnet_images:
+    - ""
+
+  seed:         -1
+  steps:         25
+  guidance_scale: 7.0
+
+  prompt:
+  - "rabbit, sitting, long ears, field, grassland, high-quality, film-grade"
+  n_prompt:
+  - "semi-realistic, mist, blur, unrealistic, cgi, 3d, render, sketch, cartoon, drawing, anime, text, cropped, out of frame, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated"
